@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CD Cold Drinks - Premium Beverages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        :root {
+            --gold: #FFD700;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --light-gray: #b8b8b8;
+        }
+        
+        body {
+            background-color: var(--black);
+            color: var(--gold);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230a0a0a"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23FFD700" stroke-width="0.5" opacity="0.3"/></svg>');
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to bottom, #1a1a1a, #000000);
+            border-bottom: 3px solid var(--gold);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 3px;
+            position: relative;
+            padding: 15px 25px;
+            border: 3px solid var(--gold);
+            text-align: center;
+        }
+        
+        .logo-subtitle {
+            font-size: 1rem;
+            letter-spacing: 10px;
+            text-align: center;
+            margin-top: 5px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border: 1px solid transparent;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            border: 1px solid var(--gold);
+            background: rgba(255, 215, 0, 0.1);
+        }
+        
+        /* Page Container */
+        .page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .page.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85));
+            padding: 150px 0 100px;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin: 0 auto 50px;
+            color: #f8f8f8;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--gold);
+            transition: all 0.3s ease;
+            margin: 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(255, 215, 0, 0.6);
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: #0c0c0c;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-title {
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .about-text {
+            color: #f8f8f8;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+        }
+        
+        /* Reviews Section */
+        .reviews-section {
+            padding: 100px 0;
+            background: #000;
+            text-align: center;
+        }
+        
+        .reviews-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .review-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.2);
+        }
+        
+        .reviewer-name {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+        
+        .review-text {
+            color: #f8f8f8;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+        
+        /* Products Section */
+        .products-section {
+            padding: 100px 0;
+            background: #0c0c0c;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 70px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .product-category {
+            margin-bottom: 80px;
+        }
+        
+        .category-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #1a1a1a, #0c0c0c);
+            border: 1px solid #333;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+        
+        .product-img {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+        }
+        
+        .product-name {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+        
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        /* Order Notification */
+        .order-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--dark-gray);
+            border: 2px solid var(--gold);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            z-index: 1000;
+            display: none;
+            max-width: 400px;
+        }
+        
+        .order-notification h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        
+        .order-notification p {
+            color: var(--light-gray);
+            margin-bottom: 15px;
+        }
+        
+        .order-notification .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: var(--gold);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 70px 0 30px;
+            border-top: 3px solid var(--gold);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .footer-section p {
+            color: var(--light-gray);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-info i {
+            margin-right: 15px;
+            color: var(--gold);
+            width: 25px;
+            text-align: center;
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: var(--light-gray);
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 30px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 10px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Order Notification -->
+    <div class="order-notification">
+        <span class="close">&times;</span>
+        <h3>Order Received!</h3>
+        <p>Your order has been sent to pashao1@wis.edu.hk. We'll contact you shortly at +852 90989090 to confirm your order.</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    CD
+                    <div class="logo-subtitle">COLD DRINKS</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="products">Products</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>PREMIUM SOFT DRINKS</h1>
+                    <p>Experience the finest selection of beverages, curated for those who appreciate quality and excellence in every sip.</p>
+                    <a href="#" class="btn nav-link" data-page="products">Explore Our Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="about-title">About Our Company</h2>
+                    <p class="about-text">
+                        CD Cold Drinks is a premium beverage provider dedicated to delivering exceptional soft drinks to our customers. 
+                        We take pride in offering a curated selection of the finest drinks that cater to discerning tastes.
+                    </p>
+                    <p class="about-text">
+                        Our mission is to provide refreshment and satisfaction through quality beverages that delight our customers 
+                        and keep them coming back for more.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="container">
+                <h2 class="reviews-title">Customer Reviews</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <h3 class="reviewer-name">Lucas L</h3>
+                        <p class="review-text">The best thing is to have a CD drink after cross country</p>
+                    </div>
+                    <div class="review-card">
+                        <h3 class="reviewer-name">Tai Ting Lee</h3>
+                        <p class="review-text">CD is so refreshing</p>
+                    </div>
+                    <div class="review-card">
+                        <h3 class="reviewer-name">Ethan P</h3>
+                        <p class="review-text">CD is so cheap and has the best service</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>OUR PREMIUM COLLECTION</h1>
+                    <p>Discover our exquisite selection of beverages, curated for those with refined taste and appreciation for quality.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="products-section">
+            <div class="container">
+                <h2 class="section-title">Luxury Beverages</h2>
+                
+                <div class="product-category">
+                    <h3 class="category-title">Premium Bottles - HKD 12</h3>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-wine-bottle"></i>
+                            </div>
+                            <h3 class="product-name">Coca-Cola</h3>
+                            <p class="product-price">HKD 12.00</p>
+                            <a href="#" class="btn order-btn" data-product="Coca-Cola Bottle">Order Now</a>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-wine-bottle"></i>
+                            </div>
+                            <h3 class="product-name">Fanta</h3>
+                            <p class="product-price">HKD 12.00</p>
+                            <a href="#" class="btn order-btn" data-product="Fanta Bottle">Order Now</a>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-wine-bottle"></i>
+                            </div>
+                            <h3 class="product-name">Sprite</h3>
+                            <p class="product-price">HKD 12.00</p>
+                            <a href="#" class="btn order-btn" data-product="Sprite Bottle">Order Now</a>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-wine-bottle"></i>
+                            </div>
+                            <h3 class="product-name">Coke Zero</h3>
+                            <p class="product-price">HKD 12.00</p>
+                            <a href="#" class="btn order-btn" data-product="Coke Zero Bottle">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-category">
+                    <h3 class="category-title">Elite Cans - HKD 10</h3>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-beer"></i>
+                            </div>
+                            <h3 class="product-name">Coca-Cola Can</h3>
+                            <p class="product-price">HKD 10.00</p>
+                            <a href="#" class="btn order-btn" data-product="Coca-Cola Can">Order Now</a>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-beer"></i>
+                            </div>
+                            <h3 class="product-name">Fanta Can</h3>
+                            <p class="product-price">HKD 10.00</p>
+                            <a href="#" class="btn order-btn" data-product="Fanta Can">Order Now</a>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-beer"></i>
+                            </div>
+                            <h3 class="product-name">Sprite Can</h3>
+                            <p class="product-price">HKD 10.00</p>
+                            <a href="#" class="btn order-btn" data-product="Sprite Can">Order Now</a>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img">
+                                <i class="fas fa-beer"></i>
+                            </div>
+                            <h3 class="product-name">Coke Zero Can</h3>
+                            <p class="product-price">HKD 10.00</p>
+                            <a href="#" class="btn order-btn" data-product="Coke Zero Can">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>CONTACT US</h1>
+                    <p>Get in touch with us for orders, questions, or feedback. We're here to serve you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="products-section">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> pashao1@wis.edu.hk</p>
+                        <p><i class="fas fa-phone"></i> +852 90989090</p>
+                        <p><i class="fas fa-map-marker-alt"></i> School Campus</p>
+                        <p><i class="fas fa-clock"></i> Available during school hours</p>
+                    </div>
+                    <p class="about-text" style="text-align: center; margin-top: 30px;">
+                        Feel free to reach out to us for any inquiries. We're always happy to hear from our customers.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About CD</h3>
+                    <p>We provide premium quality beverages with a focus on taste and customer satisfaction. Our selection is carefully curated to ensure the best beverage experience.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> pashao1@wis.edu.hk</p>
+                        <p><i class="fas fa-phone"></i> +852 90989090</p>
+                        <p><i class="fas fa-map-marker-alt"></i> School Campus</p>
+                        <p><i class="fas fa-clock"></i> Available during school hours</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Our Promise</h3>
+                    <p>We guarantee the highest quality beverages that deliver exceptional taste and satisfaction with every sip.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 CD Cold Drinks. Premium Beverage Provider.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            
+            // Set up navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Update active navigation link
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Show target page
+                    pages.forEach(page => {
+                        page.classList.remove('active');
+                    });
+                    document.getElementById(targetPage).classList.add('active');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+            
+            // Order button functionality
+            const orderButtons = document.querySelectorAll('.order-btn');
+            const notification = document.querySelector('.order-notification');
+            const closeBtn = document.querySelector('.order-notification .close');
+            
+            orderButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const product = this.getAttribute('data-product') || 'Premium Drink';
+                    
+                    // Create email content
+                    const subject = `Order Request: ${product}`;
+                    const body = `I would like to order ${product} from CD Premium Drinks. Please contact me to complete the order.`;
+                    
+                    // Show notification
+                    notification.style.display = 'block';
+                    
+                    // Set timeout to hide notification
+                    setTimeout(() => {
+                        notification.style.display = 'none';
+                    }, 5000);
+                    
+                    // Open email client
+                    window.location.href = `mailto:pashao1@wis.edu.hk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                });
+            });
+            
+            // Close notification
+            closeBtn.addEventListener('click', function() {
+                notification.style.display = 'none';
+            });
+            
+            // Simple animation for elements
+            const animatedElements = document.querySelectorAll('.product-card, .review-card');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(50px)';
+                element.style.transition = 'all 0.8s ease';
+            });
+            
+            function checkScroll() {
+                animatedElements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        });
+    </script>
+</body>
+</html> 
