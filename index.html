@@ -3,12 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CD Cold Drinks - Premium quality soft drinks at the best prices. Order Coca-Cola, Fanta, Sprite and more for delivery.">
+    <title>CD Cold Drinks - Premium Beverages & Soft Drinks Provider</title>
+    <meta name="description" content="CD Cold Drinks offers premium quality soft drinks including Coca-Cola, Fanta, Sprite at the best prices. Fast delivery of cold beverages in Hong Kong.">
     <meta name="keywords" content="cold drinks, soft drinks, beverages, Coca-Cola, Fanta, Sprite, Coke Zero, premium drinks, Hong Kong">
     <meta name="author" content="CD Cold Drinks">
     <meta name="robots" content="index, follow">
-    <title>CD Cold Drinks - Premium Beverages & Soft Drinks Delivery</title>
-    <link rel="canonical" href="https://cdcolddrinks.com">
+    <link rel="canonical" href="https://www.cdcolddrinks.com">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="CD Cold Drinks - Premium Beverages & Soft Drinks">
+    <meta property="og:description" content="Premium quality soft drinks including Coca-Cola, Fanta, Sprite at the best prices. Fast delivery in Hong Kong.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cdcolddrinks.com">
+    <meta property="og:image" content="https://www.cdcolddrinks.com/images/cd-cold-drinks-social.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CD Cold Drinks - Premium Beverages & Soft Drinks">
+    <meta name="twitter:description" content="Premium quality soft drinks including Coca-Cola, Fanta, Sprite at the best prices. Fast delivery in Hong Kong.">
+    <meta name="twitter:image" content="https://www.cdcolddrinks.com/images/cd-cold-drinks-social.jpg">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FoodAndDrinkBusiness",
+      "name": "CD Cold Drinks",
+      "description": "Premium soft drinks provider offering Coca-Cola, Fanta, Sprite and other beverages",
+      "url": "https://www.cdcolddrinks.com",
+      "telephone": "+85290989090",
+      "email": "pashao1@wis.edu.hk",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hong Kong",
+        "addressRegion": "HK",
+        "addressCountry": "CN"
+      },
+      "openingHours": "Mo-Fr 08:00-17:00",
+      "priceRange": "$$",
+      "servesCuisine": "Beverages",
+      "sameAs": []
+    }
+    </script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -456,32 +493,62 @@
             }
         }
 
-        /* Loading optimization */
-        .loading-placeholder {
-            min-height: 50px;
-            background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-            border-radius: 4px;
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--gold);
+            color: #000;
+            padding: 8px;
+            z-index: 1000;
+            text-decoration: none;
+            font-weight: bold;
         }
         
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Breadcrumb styling */
+        .breadcrumb {
+            padding: 15px 0;
+            background-color: var(--dark-gray);
+            border-bottom: 1px solid #333;
         }
         
-        /* Lazy loading for images */
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s;
+        .breadcrumb ol {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
         }
         
-        .lazy-load.loaded {
-            opacity: 1;
+        .breadcrumb li {
+            margin-right: 5px;
+            color: var(--light-gray);
+        }
+        
+        .breadcrumb li:not(:last-child)::after {
+            content: "›";
+            margin-left: 10px;
+            margin-right: 10px;
+            color: var(--gold);
+        }
+        
+        .breadcrumb a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Order Notification -->
     <div class="order-notification">
         <span class="close">&times;</span>
@@ -497,7 +564,7 @@
                     CD
                     <div class="logo-subtitle">COLD DRINKS</div>
                 </div>
-                <nav>
+                <nav aria-label="Main Navigation">
                     <ul>
                         <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
                         <li><a href="#" class="nav-link" data-page="products">Products</a></li>
@@ -507,243 +574,229 @@
             </div>
         </div>
     </header>
-
     <!-- Home Page -->
-    <div id="home" class="page active">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>PREMIUM SOFT DRINKS</h1>
-                    <p>Experience the finest selection of beverages with fast delivery and competitive prices.</p>
-                    <a href="#" class="btn nav-link" data-page="products">Explore Our Products</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about-section">
-            <div class="container">
-                <div class="about-content">
-                    <h2 class="about-title">About CD Cold Drinks</h2>
-                    <p class="about-text">
-                        CD Cold Drinks is Hong Kong's premium soft drinks provider, delivering quality beverages with maximum efficiency. 
-                        We take pride in offering a wide variety of soft drinks including Coca-Cola, Fanta, Sprite, and Coke Zero.
-                    </p>
-                    <p class="about-text">
-                        Our mission is to provide refreshment and satisfaction through fast delivery times that delight our customers 
-                        and keep them coming back for more. We serve schools, offices, and events across Hong Kong.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reviews Section -->
-        <section class="reviews-section">
-            <div class="container">
-                <h2 class="reviews-title">Customer Reviews</h2>
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <h3 class="reviewer-name">Lucas L</h3>
-                        <p class="review-text">The best thing is to have a CD drink after cross country. Always refreshing!</p>
-                    </div>
-                    <div class="review-card">
-                        <h3 class="reviewer-name">Tai Ting Lee</h3>
-                        <p class="review-text">CD Cold Drinks are so refreshing and always delivered on time.</p>
-                    </div>
-                    <div class="review-card">
-                        <h3 class="reviewer-name">Ethan P</h3>
-                        <p class="review-text">CD offers the best prices and service for premium soft drinks in Hong Kong.</p>
+    <main id="main-content">
+        <div id="home" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>PREMIUM SOFT DRINKS</h1>
+                        <p>Experience the finest largest selection of soft drinks   .</p>
+                        <a href="#" class="btn nav-link" data-page="products">Explore Our Products</a>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
 
-    <!-- Products Page -->
-    <div id="products" class="page">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>OUR PREMIUM COLLECTION</h1>
-                    <p>Discover our amazing selection of fresh soft drinks at the most competitive prices in Hong Kong.</p>
+            <!-- About Section -->
+            <section class="about-section" aria-labelledby="about-heading">
+                <div class="container">
+                    <div class="about-content">
+                        <h2 id="about-heading" class="about-title">About Our Company</h2>
+                        <p class="about-text">
+                            CD Cold Drinks is a soft drinks provider, delivering to our customers with the greatest efficiency. 
+                            We like to take pride in offering a wide variety of soft drinks.
+                        </p>
+                        <p class="about-text">
+                            Our mission is to provide refreshment and satisfaction through efficient delivery times that delight our customers 
+                            and keep them coming back for more.
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Products Section -->
-        <section class="products-section">
-            <div class="container">
-                <h2 class="section-title">Luxury Beverages</h2>
-                
-                <div class="product-category">
-                    <h3 class="category-title">Premium Bottles - HKD 12</h3>
-                    <div class="product-grid">
-                        <div class="product-card">
-                            <div class="product-img">
-                                <i class="fas fa-wine-bottle" aria-label="Coca-Cola Bottle"></i>
-                            </div>
-                            <h3 class="product-name">Coca-Cola</h3>
-                            <p class="product-price">HKD 12.00</p>
-                            <a href="#" class="btn order-btn" data-product="Coca-Cola Bottle">Order Now</a>
+            <!-- Reviews Section -->
+            <section class="reviews-section" aria-labelledby="reviews-heading">
+                <div class="container">
+                    <h2 id="reviews-heading" class="reviews-title">Customer Reviews</h2>
+                    <div class="reviews-grid">
+                        <div class="review-card">
+                            <h3 class="reviewer-name">Lucas L</h3>
+                            <p class="review-text">The best thing is to have a CD drink after cross country</p>
                         </div>
-                        <div class="product-card">
-                            <div class="product-img">
-                                <i class="fas fa-wine-bottle" aria-label="Fanta Bottle"></i>
-                            </div>
-                            <h3 class="product-name">Fanta</h3>
-                            <p class="product-price">HKD 12.00</p>
-                            <a href="#" class="btn order-btn" data-product="Fanta Bottle">Order Now</a>
+                        <div class="review-card">
+                            <h3 class="reviewer-name">Tai Ting Lee</h3>
+                            <p class="review-text">CD is so refreshing</p>
                         </div>
-                        <div class="product-card">
-                            <div class="product-img">
-                                <i class="fas fa-wine-bottle" aria-label="Sprite Bottle"></i>
-                            </div>
-                            <h3 class="product-name">Sprite</h3>
-                            <p class="product-price">HKD 12.00</p>
-                            <a href="#" class="btn order-btn" data-product="Sprite Bottle">Order Now</a>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-img">
-                                <i class="fas fa-wine-bottle" aria-label="Coke Zero Bottle"></i>
-                            </div>
-                            <h3 class="product-name">Coke Zero</h3>
-                            <p class="product-price">HKD 12.00</p>
-                            <a href="#" class="btn order-btn" data-product="Coke Zero Bottle">Order Now</a>
+                        <div class="review-card">
+                            <h3 class="reviewer-name">Ethan P</h3>
+                            <p class="review-text">CD is so cheap and has the best service</p>
                         </div>
                     </div>
                 </div>
-                
-                <div class="product-category">
-                    <h3 class="category-title">Elite Cans - HKD 10</h3>
-                    <div class="product-grid">
-                        <div class="product-card">
-                            <div class="product-img">
-                                <i class="fas fa-beer" aria-label="Coca-Cola Can"></i>
+            </section>
+        </div>
+
+        <!-- Products Page -->
+        <div id="products" class="page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>OUR PREMIUM COLLECTION</h1>
+                        <p>Discover our amazing fresh soft drinks with the cheapest prices in Hong Kong.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products-section" aria-labelledby="products-heading">
+                <div class="container">
+                    <h2 id="products-heading" class="section-title">Luxury Beverages</h2>
+                    
+                    <div class="product-category" aria-labelledby="bottles-heading">
+                        <h3 id="bottles-heading" class="category-title">Premium Bottles - HKD 12</h3>
+                        <div class="product-grid">
+                            <div class="product-card">
+                                <div class="product-img" aria-hidden="true">
+                                    <i class="fas fa-wine-bottle"></i>
+                                </div>
+                                <h3 class="product-name">Coca-Cola</h3>
+                                <p class="product-price">HKD 12.00</p>
+                                <a href="#" class="btn order-btn" data-product="Coca-Cola Bottle">Order Now</a>
                             </div>
-                            <h3 class="product-name">Coca-Cola Can</h3>
-                            <p class="product-price">HKD 10.00</p>
-                            <a href="#" class="btn order-btn" data-product="Coca-Cola Can">Order Now</a>
+                            <div class="product-card">
+                                <div class="product-img" aria-hidden="true">
+                                    <i class="fas fa-wine-bottle"></i>
+                                </div>
+                                <h3 class="product-name">Fanta</h3>
+                                <p class="product-price">HKD 12.00</p>
+                                <a href="#" class="btn order-btn" data-product="Fanta Bottle">Order Now</a>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-img" aria-hidden="true">
+                                    <i class="fas fa-wine-bottle"></i>
+                                </div>
+                                <h3 class="product-name">Sprite</h3>
+                                <p class="product-price">HKD 12.00</p>
+                                <a href="#" class="btn order-btn" data-product="Sprite Bottle">Order Now</a>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-img" aria-hidden="true">
+                                    <i class="fas fa-wine-bottle"></i>
+                                </div>
+                                <h3 class="product-name">Coke Zero</h3>
+                                <p class="product-price">HKD 12.00</p>
+                                <a href="#" class="btn order-btn" data-product="Coke Zero Bottle">Order Now</a>
+                            </div>
                         </div>
-                        <div class="product-card">
-                            <div class="product-img">
-                                <i class="fas fa-beer" aria-label="Fanta Can"></i>
+                    </div>
+                    
+                    <div class="product-category" aria-labelledby="cans-heading">
+                        <h3 id="cans-heading" class="category-title">Elite Cans - HKD 10</h3>
+                        <div class="product-grid">
+                            <div class="product-card">
+                                <div class="product-img" aria-hidden="true">
+                                    <i class="fas fa-beer"></i>
+                                </div>
+                                <h3 class="product-name">Coca-Cola Can</h3>
+                                <p class="product-price">HKD 10.00</p>
+                                <a href="#" class="btn order-btn" data-product="Coca-Cola Can">Order Now</a>
                             </div>
-                            <h3 class="product-name">Fanta Can</h3>
-                            <p class="product-price">HKD 10.00</p>
-                            <a href="#" class="btn order-btn" data-product="Fanta Can">Order Now</a>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-img">
-                                <i class="fas fa-beer" aria-label="Sprite Can"></i>
+                            <div class="product-card">
+                                <div class="product-img" aria-hidden="true">
+                                    <i class="fas fa-beer"></i>
+                                </div>
+                                <h3 class="product-name">Fanta Can</h3>
+                                <p class="product-price">HKD 10.00</p>
+                                <a href="#" class="btn order-btn" data-product="Fanta Can">Order Now</a>
                             </div>
-                            <h3 class="product-name">Sprite Can</h3>
-                            <p class="product-price">HKD 10.00</p>
-                            <a href="#" class="btn order-btn" data-product="Sprite Can">Order Now</a>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-img">
-                                <i class="fas fa-beer" aria-label="Coke Zero Can"></i>
+                            <div class="product-card">
+                                <div class="product-img" aria-hidden="true">
+                                    <i class="fas fa-beer"></i>
+                                </div>
+                                <h3 class="product-name">Sprite Can</h3>
+                                <p class="product-price">HKD 10.00</p>
+                                <a href="#" class="btn order-btn" data-product="Sprite Can">Order Now</a>
                             </div>
-                            <h3 class="product-name">Coke Zero Can</h3>
-                            <p class="product-price">HKD 10.00</p>
-                            <a href="#" class="btn order-btn" data-product="Coke Zero Can">Order Now</a>
+                            <div class="product-card">
+                                <div class="product-img" aria-hidden="true">
+                                    <i class="fas fa-beer"></i>
+                                </div>
+                                <h3 class="product-name">Coke Zero Can</h3>
+                                <p class="product-price">HKD 10.00</p>
+                                <a href="#" class="btn order-btn" data-product="Coke Zero Can">Order Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
 
-    <!-- Contact Page -->
-    <div id="contact" class="page">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>CONTACT US</h1>
-                    <p>Get in touch with us for orders, questions, or feedback. We're here to serve you with the best beverage experience.</p>
-                </div>
-            </div>
-        </section>
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1> How it works</h1>
+                        <p>📦 How It Works
+To place an order, simply email us at pashao1@wis.edu.hk and follow these steps:
 
-        <!-- Contact Section -->
-        <section class="products-section">
-            <div class="container">
-                <div class="about-content">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope" aria-hidden="true"></i> pashao1@wis.edu.hk</p>
-                        <p><i class="fas fa-phone" aria-hidden="true"></i> +852 90989090</p>
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> School Campus, Hong Kong</p>
-                        <p><i class="fas fa-clock" aria-hidden="true"></i> Available during school hours</p>
+Reply to our email to coordinate the order details.
+
+Meet us at school during snack or lunch breaks to collect your items.
+
+Payment is cash only — no exceptions.</p>
                     </div>
-                    <p class="about-text" style="text-align: center; margin-top: 30px;">
-                        Feel free to reach out to us for any inquiries. We're always happy to hear from our customers and provide the best soft drink solutions for your needs.
-                    </p>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+
+
+            <!-- Contact Section -->
+            <section class="products-section" aria-labelledby="contact-heading">
+                <div class="container">
+                    <div class="about-content">
+                        <h2 id="contact-heading" class="section-title">Get In Touch</h2>
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope" aria-hidden="true"></i> pashao1@wis.edu.hk</p>
+                            <p><i class="fas fa-phone" aria-hidden="true"></i> +852 90989090</p>
+                            <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> WIS</p>
+                            <p><i class="fas fa-clock" aria-hidden="true"></i> Available during school hours</p>
+                        </div>
+                        <p class="about-text" style="text-align: center; margin-top: 30px;">
+                            Feel free to reach out to us for any inquiries. We're always happy to hear from our customers.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About CD Cold Drinks</h3>
-                    <p>We provide premium quality beverages with a focus on taste and customer satisfaction. Our selection includes all the soft drinks you could imagine to ensure the best beverage experience at competitive prices.</p>
+                    <h3>About CD</h3>
+                    <p>We provide premium quality beverages with a focus on taste and customer satisfaction. Our selection is all the soft drinks you could imagine to ensure that you have the best experience We guarantee the best beverage prices that deliver exceptional taste and satisfaction with every sip. Our efficient delivery service ensures you get your favorite drinks when you need them.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Information</h3>
                     <div class="contact-info">
                         <p><i class="fas fa-envelope" aria-hidden="true"></i> pashao1@wis.edu.hk</p>
                         <p><i class="fas fa-phone" aria-hidden="true"></i> +852 90989090</p>
-                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> School Campus, Hong Kong</p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> School Campus</p>
                         <p><i class="fas fa-clock" aria-hidden="true"></i> Available during school hours</p>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>Our Promise</h3>
-                    <p>We guarantee the best beverage prices that deliver exceptional taste and satisfaction with every sip. Our efficient delivery service ensures you get your favorite drinks when you need them.</p>
+                    <p>We guarantee the best beverage prices that deliver exceptional taste and satisfaction with every sip for the cheapest price.</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 CD Cold Drinks. Premium Beverage Provider. All rights reserved.</p>
+                <p>&copy; 2025 CD Cold Drinks. Premium Beverage Provider.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "CD Cold Drinks",
-      "url": "https://cdcolddrinks.com",
-      "logo": "https://cdcolddrinks.com/logo.png",
-      "description": "Premium soft drinks provider in Hong Kong offering Coca-Cola, Fanta, Sprite and more with efficient delivery service.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Hong Kong",
-        "addressCountry": "HK"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+852-90989090",
-        "contactType": "Customer service",
-        "email": "pashao1@wis.edu.hk",
-        "availableLanguage": "English"
-      }
-    }
-    </script>
 
     <script>
         // Navigation functionality
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const pages = document.querySelectorAll('.page');
+            const breadcrumb = document.querySelector('.breadcrumb ol');
             
             // Set up navigation
             navLinks.forEach(link => {
@@ -764,32 +817,66 @@
                     });
                     document.getElementById(targetPage).classList.add('active');
                     
-                    // Update URL for SEO
-                    history.pushState(null, null, `#${targetPage}`);
+                    // Update breadcrumb
+                    updateBreadcrumb(targetPage);
                     
                     // Scroll to top
                     window.scrollTo(0, 0);
                     
-                    // Track pageview for analytics
-                    if (typeof gtag !== 'undefined') {
-                        gtag('config', 'GA_MEASUREMENT_ID', {
-                            'page_title': document.title,
-                            'page_path': `/#${targetPage}`
-                        });
-                    }
+                    // Update URL hash for better SEO and user experience
+                    window.history.pushState(null, null, `#${targetPage}`);
+                    
+                    // Update page title for better SEO
+                    updatePageTitle(targetPage);
                 });
             });
             
-            // Check URL hash on load
+            // Update breadcrumb based on current page
+            function updateBreadcrumb(page) {
+                let pageName = '';
+                switch(page) {
+                    case 'home':
+                        pageName = 'Home';
+                        break;
+                    case 'products':
+                        pageName = 'Products';
+                        break;
+                    case 'contact':
+                        pageName = 'Contact';
+                        break;
+                }
+                
+                breadcrumb.innerHTML = `
+                    <li><a href="#" data-page="home">Home</a></li>
+                    <li><span aria-current="page">${pageName}</span></li>
+                `;
+            }
+            
+            // Update page title based on current page
+            function updatePageTitle(page) {
+                let titleAddition = '';
+                switch(page) {
+                    case 'products':
+                        titleAddition = ' - Products';
+                        break;
+                    case 'contact':
+                        titleAddition = ' - Contact Us';
+                        break;
+                }
+                document.title = `CD Cold Drinks - Premium Beverages${titleAddition}`;
+            }
+            
+            // Check for hash in URL on page load
             if (window.location.hash) {
                 const targetPage = window.location.hash.substring(1);
                 const targetLink = document.querySelector(`.nav-link[data-page="${targetPage}"]`);
+                
                 if (targetLink) {
                     targetLink.click();
                 }
             }
             
-            // Order button functionality
+            // Order button functionality - UPDATED FOR GMAIL
             const orderButtons = document.querySelectorAll('.order-btn');
             const notification = document.querySelector('.order-notification');
             const closeBtn = document.querySelector('.order-notification .close');
@@ -814,16 +901,6 @@
                     // Open Gmail specifically (not default mail client)
                     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=pashao1@wis.edu.hk&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                     window.open(gmailUrl, '_blank');
-                    
-                    // Track conversion for analytics
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'conversion', {
-                            'send_to': 'AW-XXXXX/YYYYY',
-                            'value': product.includes('Bottle') ? 12.00 : 10.00,
-                            'currency': 'HKD',
-                            'transaction_id': Date.now().toString()
-                        });
-                    }
                 });
             });
             
@@ -855,23 +932,6 @@
             
             window.addEventListener('scroll', checkScroll);
             checkScroll();
-            
-            // Lazy loading implementation
-            if ('IntersectionObserver' in window) {
-                const lazyObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const lazyElement = entry.target;
-                            lazyElement.classList.add('loaded');
-                            lazyObserver.unobserve(lazyElement);
-                        }
-                    });
-                });
-                
-                document.querySelectorAll('.lazy-load').forEach(lazyElement => {
-                    lazyObserver.observe(lazyElement);
-                });
-            }
         });
     </script>
 </body>
