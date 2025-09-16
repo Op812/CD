@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>CD88 – Premium Soft Drinks from Hong Kong</title>
-    <meta name="description" content="CD88 offers premium soft drinks in Hong Kong. Discover refreshing beverages at unbeatable prices.">
-<meta name="keywords" content="CD88, soft drinks, Hong Kong beverages,soda, cold drinks">
-    <meta name="google-site-verification" content="uSkiUs4i61HchP-l9eopzo4bb-4eOC-7SDixM1yZ7Xo" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CD Cold Drinks - Premium quality soft drinks at the best prices. Order Coca-Cola, Fanta, Sprite and more for delivery.">
+    <meta name="keywords" content="cold drinks, soft drinks, beverages, Coca-Cola, Fanta, Sprite, Coke Zero, premium drinks, Hong Kong">
+    <meta name="author" content="CD Cold Drinks">
+    <meta name="robots" content="index, follow">
+    <title>CD Cold Drinks - Premium Beverages & Soft Drinks Delivery</title>
+    <link rel="canonical" href="https://cdcolddrinks.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -453,6 +455,30 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Loading optimization */
+        .loading-placeholder {
+            min-height: 50px;
+            background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 4px;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Lazy loading for images */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .lazy-load.loaded {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -489,7 +515,7 @@
             <div class="container">
                 <div class="hero-content">
                     <h1>PREMIUM SOFT DRINKS</h1>
-                    <p>Experience the finest selection of beverages.</p>
+                    <p>Experience the finest selection of beverages with fast delivery and competitive prices.</p>
                     <a href="#" class="btn nav-link" data-page="products">Explore Our Products</a>
                 </div>
             </div>
@@ -499,14 +525,14 @@
         <section class="about-section">
             <div class="container">
                 <div class="about-content">
-                    <h2 class="about-title">About Our Company</h2>
+                    <h2 class="about-title">About CD Cold Drinks</h2>
                     <p class="about-text">
-                        CD Cold Drinks is a soft drinks provider, delivering to our customers with the greatest efficiency. 
-                        We like to take pride in offering a wide variety of soft drinks.
+                        CD Cold Drinks is Hong Kong's premium soft drinks provider, delivering quality beverages with maximum efficiency. 
+                        We take pride in offering a wide variety of soft drinks including Coca-Cola, Fanta, Sprite, and Coke Zero.
                     </p>
                     <p class="about-text">
-                        Our mission is to provide refreshment and satisfaction through efficient delivery times that delight our customers 
-                        and keep them coming back for more.
+                        Our mission is to provide refreshment and satisfaction through fast delivery times that delight our customers 
+                        and keep them coming back for more. We serve schools, offices, and events across Hong Kong.
                     </p>
                 </div>
             </div>
@@ -519,15 +545,15 @@
                 <div class="reviews-grid">
                     <div class="review-card">
                         <h3 class="reviewer-name">Lucas L</h3>
-                        <p class="review-text">The best thing is to have a CD drink after cross country</p>
+                        <p class="review-text">The best thing is to have a CD drink after cross country. Always refreshing!</p>
                     </div>
                     <div class="review-card">
                         <h3 class="reviewer-name">Tai Ting Lee</h3>
-                        <p class="review-text">CD is so refreshing</p>
+                        <p class="review-text">CD Cold Drinks are so refreshing and always delivered on time.</p>
                     </div>
                     <div class="review-card">
                         <h3 class="reviewer-name">Ethan P</h3>
-                        <p class="review-text">CD is so cheap and has the best service</p>
+                        <p class="review-text">CD offers the best prices and service for premium soft drinks in Hong Kong.</p>
                     </div>
                 </div>
             </div>
@@ -541,7 +567,7 @@
             <div class="container">
                 <div class="hero-content">
                     <h1>OUR PREMIUM COLLECTION</h1>
-                    <p>Discover our amazing fresh soft drinks with the cheapest price.</p>
+                    <p>Discover our amazing selection of fresh soft drinks at the most competitive prices in Hong Kong.</p>
                 </div>
             </div>
         </section>
@@ -556,7 +582,7 @@
                     <div class="product-grid">
                         <div class="product-card">
                             <div class="product-img">
-                                <i class="fas fa-wine-bottle"></i>
+                                <i class="fas fa-wine-bottle" aria-label="Coca-Cola Bottle"></i>
                             </div>
                             <h3 class="product-name">Coca-Cola</h3>
                             <p class="product-price">HKD 12.00</p>
@@ -564,7 +590,7 @@
                         </div>
                         <div class="product-card">
                             <div class="product-img">
-                                <i class="fas fa-wine-bottle"></i>
+                                <i class="fas fa-wine-bottle" aria-label="Fanta Bottle"></i>
                             </div>
                             <h3 class="product-name">Fanta</h3>
                             <p class="product-price">HKD 12.00</p>
@@ -572,7 +598,7 @@
                         </div>
                         <div class="product-card">
                             <div class="product-img">
-                                <i class="fas fa-wine-bottle"></i>
+                                <i class="fas fa-wine-bottle" aria-label="Sprite Bottle"></i>
                             </div>
                             <h3 class="product-name">Sprite</h3>
                             <p class="product-price">HKD 12.00</p>
@@ -580,7 +606,7 @@
                         </div>
                         <div class="product-card">
                             <div class="product-img">
-                                <i class="fas fa-wine-bottle"></i>
+                                <i class="fas fa-wine-bottle" aria-label="Coke Zero Bottle"></i>
                             </div>
                             <h3 class="product-name">Coke Zero</h3>
                             <p class="product-price">HKD 12.00</p>
@@ -594,7 +620,7 @@
                     <div class="product-grid">
                         <div class="product-card">
                             <div class="product-img">
-                                <i class="fas fa-beer"></i>
+                                <i class="fas fa-beer" aria-label="Coca-Cola Can"></i>
                             </div>
                             <h3 class="product-name">Coca-Cola Can</h3>
                             <p class="product-price">HKD 10.00</p>
@@ -602,7 +628,7 @@
                         </div>
                         <div class="product-card">
                             <div class="product-img">
-                                <i class="fas fa-beer"></i>
+                                <i class="fas fa-beer" aria-label="Fanta Can"></i>
                             </div>
                             <h3 class="product-name">Fanta Can</h3>
                             <p class="product-price">HKD 10.00</p>
@@ -610,7 +636,7 @@
                         </div>
                         <div class="product-card">
                             <div class="product-img">
-                                <i class="fas fa-beer"></i>
+                                <i class="fas fa-beer" aria-label="Sprite Can"></i>
                             </div>
                             <h3 class="product-name">Sprite Can</h3>
                             <p class="product-price">HKD 10.00</p>
@@ -618,7 +644,7 @@
                         </div>
                         <div class="product-card">
                             <div class="product-img">
-                                <i class="fas fa-beer"></i>
+                                <i class="fas fa-beer" aria-label="Coke Zero Can"></i>
                             </div>
                             <h3 class="product-name">Coke Zero Can</h3>
                             <p class="product-price">HKD 10.00</p>
@@ -637,7 +663,7 @@
             <div class="container">
                 <div class="hero-content">
                     <h1>CONTACT US</h1>
-                    <p>Get in touch with us for orders, questions, or feedback. We're here to serve you.</p>
+                    <p>Get in touch with us for orders, questions, or feedback. We're here to serve you with the best beverage experience.</p>
                 </div>
             </div>
         </section>
@@ -648,13 +674,13 @@
                 <div class="about-content">
                     <h2 class="section-title">Get In Touch</h2>
                     <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> pashao1@wis.edu.hk</p>
-                        <p><i class="fas fa-phone"></i> +852 90989090</p>
-                        <p><i class="fas fa-map-marker-alt"></i> School Campus</p>
-                        <p><i class="fas fa-clock"></i> Available during school hours</p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> pashao1@wis.edu.hk</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> +852 90989090</p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> School Campus, Hong Kong</p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> Available during school hours</p>
                     </div>
                     <p class="about-text" style="text-align: center; margin-top: 30px;">
-                        Feel free to reach out to us for any inquiries. We're always happy to hear from our customers.
+                        Feel free to reach out to us for any inquiries. We're always happy to hear from our customers and provide the best soft drink solutions for your needs.
                     </p>
                 </div>
             </div>
@@ -666,28 +692,52 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About CD</h3>
-                    <p>We provide premium quality beverages with a focus on taste and customer satisfaction. Our selection is all the soft rinks you could imagine to ensure the best beverage experience.</p>
+                    <h3>About CD Cold Drinks</h3>
+                    <p>We provide premium quality beverages with a focus on taste and customer satisfaction. Our selection includes all the soft drinks you could imagine to ensure the best beverage experience at competitive prices.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Information</h3>
                     <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> pashao1@wis.edu.hk</p>
-                        <p><i class="fas fa-phone"></i> +852 90989090</p>
-                        <p><i class="fas fa-map-marker-alt"></i> School Campus</p>
-                        <p><i class="fas fa-clock"></i> Available during school hours</p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> pashao1@wis.edu.hk</p>
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> +852 90989090</p>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> School Campus, Hong Kong</p>
+                        <p><i class="fas fa-clock" aria-hidden="true"></i> Available during school hours</p>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>Our Promise</h3>
-                    <p>We guarantee the best beverage prices that deliver exceptional taste and satisfaction with every sip for the cheapest price.</p>
+                    <p>We guarantee the best beverage prices that deliver exceptional taste and satisfaction with every sip. Our efficient delivery service ensures you get your favorite drinks when you need them.</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 CD Cold Drinks. Premium Beverage Provider.</p>
+                <p>&copy; 2023 CD Cold Drinks. Premium Beverage Provider. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "CD Cold Drinks",
+      "url": "https://cdcolddrinks.com",
+      "logo": "https://cdcolddrinks.com/logo.png",
+      "description": "Premium soft drinks provider in Hong Kong offering Coca-Cola, Fanta, Sprite and more with efficient delivery service.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hong Kong",
+        "addressCountry": "HK"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+852-90989090",
+        "contactType": "Customer service",
+        "email": "pashao1@wis.edu.hk",
+        "availableLanguage": "English"
+      }
+    }
+    </script>
 
     <script>
         // Navigation functionality
@@ -714,10 +764,30 @@
                     });
                     document.getElementById(targetPage).classList.add('active');
                     
+                    // Update URL for SEO
+                    history.pushState(null, null, `#${targetPage}`);
+                    
                     // Scroll to top
                     window.scrollTo(0, 0);
+                    
+                    // Track pageview for analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('config', 'GA_MEASUREMENT_ID', {
+                            'page_title': document.title,
+                            'page_path': `/#${targetPage}`
+                        });
+                    }
                 });
             });
+            
+            // Check URL hash on load
+            if (window.location.hash) {
+                const targetPage = window.location.hash.substring(1);
+                const targetLink = document.querySelector(`.nav-link[data-page="${targetPage}"]`);
+                if (targetLink) {
+                    targetLink.click();
+                }
+            }
             
             // Order button functionality
             const orderButtons = document.querySelectorAll('.order-btn');
@@ -741,8 +811,19 @@
                         notification.style.display = 'none';
                     }, 5000);
                     
-                    // Open email client
-                    window.location.href = `mailto:pashao1@wis.edu.hk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    // Open Gmail specifically (not default mail client)
+                    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=pashao1@wis.edu.hk&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    window.open(gmailUrl, '_blank');
+                    
+                    // Track conversion for analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-XXXXX/YYYYY',
+                            'value': product.includes('Bottle') ? 12.00 : 10.00,
+                            'currency': 'HKD',
+                            'transaction_id': Date.now().toString()
+                        });
+                    }
                 });
             });
             
@@ -774,11 +855,24 @@
             
             window.addEventListener('scroll', checkScroll);
             checkScroll();
+            
+            // Lazy loading implementation
+            if ('IntersectionObserver' in window) {
+                const lazyObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const lazyElement = entry.target;
+                            lazyElement.classList.add('loaded');
+                            lazyObserver.unobserve(lazyElement);
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('.lazy-load').forEach(lazyElement => {
+                    lazyObserver.observe(lazyElement);
+                });
+            }
         });
     </script>
 </body>
-
-</html> 
-
-
-
+</html>
